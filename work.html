@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <div class="grid parent">
+          <div class="logo">
+            <a class="text-4xl" href="index.html">SAQUIB</a>
+          </div>
+          <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+          </div>
+          <div class="child">
+            <a href="https://wa.me/918920271159?text=Hello%2C%20I%27m%20interested%20in%20your%20services%20and%20job%20opportunities.%20Can%20you%20please%20provide%20more%20details%3F" target="_blank">
+              <button>Contact Us</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="container">
+        <div class="grid parent">
+          <div class="logo">
+            <a class="text-4xl" href="index.html">SAQUIB</a>
+          </div>
+          <div class="menu" id="desktopMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="work.html">Work</a>
+          </div>
+          <div class="child" id="desktopContact">
+            <a href="https://wa.me/918920271159?text=Hello%2C%20I%27m%20interested%20in%20your%20services%20and%20job%20opportunities.%20Can%20you%20please%20provide%20more%20details%3F" target="_blank">
+              <button>Contact Us</button>
+            </a>
+            <!-- Burger Icon -->
+            <div class="burger" id="burgerBtn">&#9776;</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Slide Menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="close-btn" id="closeBtn">&times;</div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="https://wa.me/918920271159?text=Hello%2C%20I%27m%20interested%20in%20your%20services%20and%20job%20opportunities.%20Can%20you%20please%20provide%20more%20details%3F" target="_blank">Contact</a>
+      </div>
+    </div>

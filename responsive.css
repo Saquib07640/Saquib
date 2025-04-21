@@ -97,7 +97,7 @@
   .space-page {
     border-bottom: 1px solid #1e293b;
     border-left: 0px solid #1e293b;
-    border-right: 1px solid #1e293b;
+    border-right: 0px solid #1e293b;
   }
   .about-page .grid {
     grid-template-columns: 1fr; /* Stack content */
@@ -285,4 +285,55 @@
   .get-touch-page .child_image_box-top_1 {
     text-align: center;
   }
+
+  .name-page .about-heading a {
+   
+    font-size: 2.5rem;
+  
+}
+  
+.name-page_1 .grid {
+  grid-template-columns: 1fr;}
+
+  .name_heading h1 {
+    font-size: 2.5rem;}
+
+    .name_box {
+      border-right: 0px solid #1e293b;
+  }
+    .name-page_1 {
+      border-bottom: 1px solid #1e293b;
+      border-right:0px solid #1e293b;
+      border-left: 0px solid #1e293b; 
+  }
+
+  .process-page {
+    border-bottom: 1px solid #1e293b;
+    border-left: 0px solid #1e293b;
+    border-right: 0px solid #1e293b;
+}
+  .process-page .grid {
+    grid-template-columns: 1fr;}
+    
+    .process_content h1 {
+      font-size: 3rem;
+  }
+
+  
+  .accordion-header {
+   
+    padding: 25px;
+}
+.process_content {
+  border-right: 0px solid #1e293b;
+  width: 100%;
+   padding: 0px;}
+
+   .process_content_toggele .accordion-item:nth-child(1) {
+   border-top: 1px solid #061826;
+}
+.accordion-content div h4{
+  font-size: 12px;
+}
+
 }
