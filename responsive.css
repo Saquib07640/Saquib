@@ -95,9 +95,10 @@
   }
 
   .space-page {
-    border-bottom: 0px solid #1e293b;
+    border-bottom: 1px solid #1e293b;
     border-left: 0px solid #1e293b;
     border-right: 0px solid #1e293b;
+    border-top:0px solid #061826;
   }
   .about-page .grid {
     grid-template-columns: 1fr; /* Stack content */
@@ -349,9 +350,7 @@
     border-right: 0px solid #1e293b;
 }
 
-.Work_content_1:last-child{
-  border-bottom: 1px solid #1e293b;
-}
+
 .name_subheading{
   border-bottom: 1px solid #061826;
 }

@@ -415,9 +415,11 @@ body {
 }
 .Work_heading .Work_content {
   width: 100%;
-  padding: 30px;
+  padding: 30px 20px;
   border-bottom: 1px solid #1e293b;
 }
+
+
 .Work-page .about_images img {
   width: 100%;
   background-repeat: no-repeat;
@@ -809,3 +811,5 @@ service-page .box_2_heading {
 .process-page .accordion-item:nth-child(3) {
   border-bottom: 1px solid #1e293b;
 }
+
+
