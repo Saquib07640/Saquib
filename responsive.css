@@ -352,6 +352,11 @@
 .Work_content_1:last-child{
   border-bottom: 1px solid #1e293b;
 }
-
+.name_subheading{
+  border-bottom: 1px solid #061826;
+}
+.process-page .container{
+  border-top:1px solid #061826;
+}
 
 }
