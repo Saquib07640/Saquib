@@ -248,7 +248,7 @@
   }
 
   .box_2_heading h1 {
-    font-size: 3rem;
+    font-size: 3rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
     text-align: center;
