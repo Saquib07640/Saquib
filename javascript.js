@@ -1,4 +1,6 @@
 const accordionItems = document.querySelectorAll('.accordion-item');
+gsap.registerPlugin(ScrollTrigger) 
+gsap.registerPlugin(SplitText) 
 
 accordionItems.forEach(item => {
   const header = item.querySelector('.accordion-header');
@@ -79,7 +81,6 @@ function revealLetterByLetter() {
 setTimeout(revealLetterByLetter, 40 * index);  // Delay increases with index
 
 
-gsap.registerPlugin(ScrollTrigger) 
 
 gsap.from('.about_images', {
   scrollTrigger: {
@@ -93,38 +94,65 @@ gsap.from('.about_images', {
  
 });
 
+let windowDimensions = { width: 0, height: 0 };
+
+const getWindowWidth = () => {
+  windowDimensions = { width: window.innerWidth, height: window.innerHeight };
+};
+
+window.addEventListener('resize', getWindowWidth);
+getWindowWidth(); // initial update
+
+const isMobile = () => windowDimensions.width < 450;
+
+console.log(isMobile()); // true or false
 
 
-const quotes = document.querySelectorAll("#animation");
+function textAnimation(textId, triggerElement, lessGap = false, paragraph = false, headingGap = '5px') {
+  const quotes = document.querySelectorAll(textId);
 
-function setupSplits() {
   quotes.forEach((quote) => {
-    // Reset if needed
-    if (quote.anim) {
-      quote.anim.progress(1).kill();
-      quote.split.revert();
+    const text = quote.textContent;
+    quote.innerHTML = ''; // Clear existing content
+    
+    text.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.display = 'inline-block';
+      span.style.transform = 'translateY(100%)';
+      span.style.transition = 'transform 0.4s ease';
+      if (char === ' ') {
+        span.style.marginRight = lessGap ? '5px' : headingGap;
+      } else {
+        span.style.marginRight = paragraph ? '0px' : '5px'; // Reduced gap for paragraph
+      }
+      quote.appendChild(span);
+    });
+
+    let index = 0;
+    const spans = quote.getElementsByTagName('span');
+
+    function revealLetterByLetter() {
+      if (index < spans.length) {
+        spans[index].style.transform = 'translateY(0)';
+        index++;
+        setTimeout(revealLetterByLetter, 40);
+      }
     }
 
-    quote.split = SplitText.create(quote, {
-      type: "words,chars",
-      linesClass: "split-line"
+    // Trigger letter reveal on scroll using GSAP ScrollTrigger
+    ScrollTrigger.create({
+      trigger: triggerElement,
+      start: "top 80%",
+      once: true,
+      onEnter: () => {
+        revealLetterByLetter();
+      }
     });
 
-    // Set up the anim
-    quote.anim = gsap.from(quote.split.chars, {
-      scrollTrigger: {
-        trigger: quote,
-        toggleActions: "restart pause resume reverse",
-        start: "center center",
-        markers: { startColor: "#dfdcff", endColor: "transparent" }
-      },
-      duration: 0.6,
-      ease: "circ.out",
-      y: 80,
-      stagger: 0.02
-    });
   });
 }
 
-ScrollTrigger.addEventListener("refresh", setupSplits);
-setupSplits();
+textAnimation("#animation", ".about_content", false, false, isMobile ? '90px' : '50px');
+textAnimation("#name-animation", ".about_content", true, true);
+textAnimation("#work-animation", ".Work_content",false, false,   isMobile ? '260px' : '50px');

@@ -814,5 +814,10 @@ service-page .box_2_heading {
 .process-page .accordion-item:nth-child(3) {
   border-bottom: 1px solid #1e293b;
 }
-
-
+#animation{
+  overflow: hidden;
+  
+}
+#name-animation{
+  overflow: hidden;
+}
