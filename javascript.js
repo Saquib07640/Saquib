@@ -156,3 +156,5 @@ function textAnimation(textId, triggerElement, lessGap = false, paragraph = fals
 textAnimation("#animation", ".about_content", false, false, isMobile ? '90px' : '50px');
 textAnimation("#name-animation", ".about_content", true, true);
 textAnimation("#work-animation", ".Work_content",false, false,   isMobile ? '260px' : '50px');
+textAnimation("#area-animation", "#area-animation", false, false, isMobile ? '20px' : '50px');
+
