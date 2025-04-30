@@ -528,8 +528,7 @@ body {
 .service-page .container {
   border-left: 1px solid #1e293b;
   border-right: 1px solid #1e293b;
-
- 
+  
 }
 .service-page .grid {
   display: grid;
@@ -537,11 +536,8 @@ body {
   transition: all 0.3s ease-in-out;
   height: 100%;
   width: 100%;
-  justify-content: center;
 }
-.service-page .box_2_heading {
-  display: flex;
-  justify-content: center;
+service-page .box_2_heading {
   border-right: 0px solid #1e293b;
   border-left: 0px solid #1e293b;
   width: 100%;
@@ -553,6 +549,9 @@ body {
   color: rgb(6, 24, 38);
   text-align: center;
   padding-top: 30px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 .box_2_heading p {
   font-size: 1.1rem;
@@ -831,15 +830,6 @@ body {
 }
 
 #area-animation{
-
   overflow: hidden;
-  font-size: 5.5rem !important;
-  max-width: 750px;
-  border-right: 1px solid #1e293b;
-  border-left: 1px solid #1e293b;
-  padding: 10px 40px;
-  text-align: center;
-}
-.box_2_heading p{
-  border-top: 1px solid #1e293b;
+  font-size: 5rem !important;
 }
