@@ -197,7 +197,7 @@
 
   .Work-page .Work_content h1 {
     font-size: 3rem;
-    text-align: left;
+    text-align: center;
   }
 
   .Work_content_1 {
@@ -324,7 +324,7 @@
   .accordion-header {
    
     padding: 25px;
-}
+
 .process_content {
   border-right: 0px solid #1e293b;
   width: 100%;
@@ -357,7 +357,11 @@
 .process-page .container{
   border-top:1px solid #061826;
 }
-#area-animation{
-font-size: 1.2rem !important;}
+.service-page .add {
+  line-height: 0.8;
+  padding-bottom: 20px;
+  font-size: 3rem !important;
+}
 
+}
 }

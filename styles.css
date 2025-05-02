@@ -549,9 +549,7 @@ service-page .box_2_heading {
   color: rgb(6, 24, 38);
   text-align: center;
   padding-top: 30px;
-  display: flex;
-  align-items:center;
-  justify-content: center;
+  
 }
 .box_2_heading p {
   font-size: 1.1rem;
@@ -818,18 +816,25 @@ service-page .box_2_heading {
 .process-page .accordion-item:nth-child(3) {
   border-bottom: 1px solid #1e293b;
 }
-#animation{
+.over-hidden{
+  overflow: hidden;
+}
+#area-animation{
+  font-size: 6rem !important;
   overflow: hidden;
   
 }
-#name-animation{
-  overflow: hidden;
-}
-#work-animation{
-  overflow: hidden;
-}
 
-#area-animation{
+.service-page .add{
+  line-height: 0.8;
+  padding-bottom:20px;
+
+
+  
+}
+.box_2_heading p{
+border-top: 1px solid #1e293b;
+}
+.name-flow{
   overflow: hidden;
-  font-size: 5rem !important;
 }

@@ -43,44 +43,6 @@ const burgerBtn = document.getElementById("burgerBtn");
   });
 
 
-  const text = "SAQUIB";
-const container = document.getElementById('text-container');
-
-// Create a span for each character
-text.split('').forEach(char => {
-  const span = document.createElement('span');
-  span.textContent = char;
-  container.appendChild(span);
-});
-
-// Initialize all spans to be hidden and below their final position
-function initializeSpans() {
-  const spans = Array.from(container.getElementsByTagName('span'));
-  spans.forEach(span => {
-    span.style.transform = "translateY(200px)";
-    span.style.transition = "transform 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.1)";
-  });
-}
-
-initializeSpans();
-
-let index = 0;
-
-function revealLetterByLetter() {
-  const spans = container.getElementsByTagName('span');
-  if (index < spans.length) {
-    const span = spans[index];
-    span.style.transform = "translateY(0)";  // Move up to the final position
-
-    index++
-    setTimeout(revealLetterByLetter, 40 * index);
-  }
-}
-
-// Trigger the reveal animation
-setTimeout(revealLetterByLetter, 40 * index);  // Delay increases with index
-
-
 
 gsap.from('.about_images', {
   scrollTrigger: {
@@ -105,56 +67,49 @@ getWindowWidth(); // initial update
 
 const isMobile = () => windowDimensions.width < 450;
 
-console.log(isMobile()); // true or false
 
 
-function textAnimation(textId, triggerElement, lessGap = false, paragraph = false, headingGap = '5px') {
-  const quotes = document.querySelectorAll(textId);
 
-  quotes.forEach((quote) => {
-    const text = quote.textContent;
-    quote.innerHTML = ''; // Clear existing content
-    
-    text.split('').forEach(char => {
-      const span = document.createElement('span');
-      span.textContent = char;
-      span.style.display = 'inline-block';
-      span.style.transform = 'translateY(100%)';
-      span.style.transition = 'transform 0.4s ease';
-      if (char === ' ') {
-        span.style.marginRight = lessGap ? '5px' : headingGap;
-      } else {
-        span.style.marginRight = paragraph ? '0px' : '5px'; // Reduced gap for paragraph
-      }
-      quote.appendChild(span);
-    });
 
-    let index = 0;
-    const spans = quote.getElementsByTagName('span');
 
-    function revealLetterByLetter() {
-      if (index < spans.length) {
-        spans[index].style.transform = 'translateY(0)';
-        index++;
-        setTimeout(revealLetterByLetter, 40);
-      }
-    }
 
-    // Trigger letter reveal on scroll using GSAP ScrollTrigger
-    ScrollTrigger.create({
-      trigger: triggerElement,
-      start: "top 80%",
-      once: true,
-      onEnter: () => {
-        revealLetterByLetter();
-      }
-    });
 
-  });
+
+function textAnimation(className,trigger){
+  const splitTypes = document.querySelectorAll(className)
+
+splitTypes.forEach((char,i) => {
+
+    const text = new SplitType(char, { types: 'chars'})
+
+    gsap.fromTo(text.chars, 
+        {
+            y: 280,
+        },
+        {
+            y: 0,
+            duration: .6,
+            stagger: 0.09,
+            ease:"power2.out",
+            scrollTrigger: {
+                trigger: trigger,
+                start: 'top 80%',
+
+            }
+    })
+
+
+})
+
 }
 
-textAnimation("#animation", ".about_content", false, false, isMobile ? '90px' : '50px');
-textAnimation("#name-animation", ".about_content", true, true);
-textAnimation("#work-animation", ".Work_content",false, false,   isMobile ? '260px' : '50px');
-textAnimation("#area-animation", "#area-animation", false, false, isMobile ? '20px' : '50px');
-
+textAnimation('#text-container','#text-container')
+textAnimation('.reveal-type', '.about_heading')
+textAnimation('.reveal-type_2', '.Work_heading')
+textAnimation('.revealType_3', '.add')
+textAnimation('#about-container', '#about-container')
+textAnimation('.name-effect', '#about-container')
+textAnimation('.name-effect-1', '.process_content')
+textAnimation('#work-animation', '.about-heading')
+textAnimation('.work-animation-1', '.Work_heading')
+textAnimation('.work-animation-2', '.webiste')
