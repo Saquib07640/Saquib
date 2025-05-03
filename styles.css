@@ -609,7 +609,7 @@ service-page .box_2_heading {
 }
 
 .accordion-header h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: rgb(6, 24, 38);
 }
@@ -668,7 +668,7 @@ service-page .box_2_heading {
 /* Responsive */
 @media (max-width: 600px) {
   .accordion-header h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .accordion-content p {
