@@ -115,7 +115,9 @@ let isLoading = true;
 window.addEventListener("load", () => {
   isLoading = false;
 
-  loaderElement.style.display = "none"; // Now this works
+  if(!isLoading === false) {
+    loaderElement.style.display = "none"; // Now this works
+  }
   textAnimation("#text-container", "#text-container");
   textAnimation("#about-container", "#about-container");
   textAnimation("#work-animation", ".about-heading");
