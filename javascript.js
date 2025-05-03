@@ -113,3 +113,27 @@ textAnimation('.name-effect-1', '.process_content')
 textAnimation('#work-animation', '.about-heading')
 textAnimation('.work-animation-1', '.Work_heading')
 textAnimation('.work-animation-2', '.webiste')
+
+
+
+const cursor = document.createElement("div");
+cursor.classList.add("custom-cursor");
+document.body.appendChild(cursor);
+
+// Move the cursor with mouse
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+});
+
+// Elements to trigger cursor scale
+const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
+
+hoverTargets.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.classList.add("hovered");
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.classList.remove("hovered");
+  });
+});
