@@ -184,7 +184,8 @@ body {
 }
 
 .add h1{
-  font-size: 5.5rem !important;
+  font-size: 5rem !important;
+  text-align: left;
 } 
 .profession .grid {
   display: grid;
@@ -536,8 +537,9 @@ body {
 }
 .service-page .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   transition: all 0.3s ease-in-out;
+  align-items: flex-start;
   height: 100%;
   width: 100%;
 }
@@ -552,16 +554,14 @@ service-page .box_2_heading {
   font-weight: 700;
   padding: 20px;
   color: rgb(6, 24, 38);
-  text-align: center;
+  text-align: left;
   
 }
 .box_2_heading p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
   color: rgb(6, 24, 38);
-  text-align: center;
-  padding: 20px 5px;
-  border-bottom: 1px solid #1e293b;
+  padding: 20px;
 }
 
 .accordion {
@@ -825,15 +825,21 @@ service-page .box_2_heading {
 }
 
 .service-page .add{
-  line-height: 0.8;
+border-right: 1px solid #1e293b;
+padding: 20px;
+ 
+
+
+  
+}
+.service-page .add p{
+
   padding-bottom:20px;
 
 
   
 }
-.box_2_heading p{
-border-top: 1px solid #1e293b;
-}
+
 .name-flow{
   overflow: hidden;
 }

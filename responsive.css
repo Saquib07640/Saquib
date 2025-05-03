@@ -250,15 +250,15 @@
     font-size: 3rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
-    padding-top: 20px;
+    padding:0;
   }
   .box_2_heading p {
-    font-size: 0.7rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 400;
     color: rgb(6, 24, 38);
-    text-align: justify;
-    padding: 20px 10px;
-    margin-top: -10px;
+    text-align: left;
+    padding:10px 0;
+  
   }
   .get-touch-page .grid {
     grid-template-columns: 1fr;
@@ -364,14 +364,18 @@ padding: 20px;
 .name_subheading{
   border-bottom: 1px solid #061826;
 }
-
+.service-page .grid{
+  grid-template-columns: 1fr;
+}
 .service-page .add {
-  line-height: 0.3;
+  border-right: 0px solid #1e293b;
   padding-bottom: 20px;
   font-size: 3rem !important;
-  margin-top: 8px;
+
 }
 
-
+.service-page .accordion-item:nth-child(1) {
+  border-top: 1px solid #061826;
+}
 
 }
