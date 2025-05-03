@@ -321,6 +321,15 @@
 .process_content p{
   padding: 20px 0;
 }
+.name_heading h1{
+  padding: 20px;
+}
+.name_subheading h2 {
+  padding: 20px;
+}
+.name_subheading_2 P {
+padding: 20px;
+}
   
   .accordion-header {
    
