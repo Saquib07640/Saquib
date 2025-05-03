@@ -65,7 +65,7 @@
   }
 
   .child_image_box-top img {
-    right: -8.5px;
+    right: -8px;
     z-index: 5;
     width: 15px;
   }
@@ -362,9 +362,6 @@
   margin-top: 8px;
 }
 
-.about-icon img{
-  right: 55px;
 
-}
 
 }
