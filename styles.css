@@ -175,13 +175,17 @@ body {
   justify-content: center;
   overflow: hidden;
 }
+
 .box_2_heading h1 {
   text-decoration: none;
   color: rgb(6, 24, 38);
   font-size: 11rem !important;
   font-weight: 700;
 }
- 
+
+.add h1{
+  font-size: 5.5rem !important;
+} 
 .profession .grid {
   display: grid;
   grid-template-columns: 1.6fr 0.4fr;
@@ -546,9 +550,9 @@ service-page .box_2_heading {
 .box_2_heading h1 {
   font-size: 5.5rem;
   font-weight: 700;
+  padding: 20px;
   color: rgb(6, 24, 38);
   text-align: center;
-  padding-top: 30px;
   
 }
 .box_2_heading p {

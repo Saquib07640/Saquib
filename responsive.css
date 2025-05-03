@@ -1,6 +1,6 @@
 .burger {
   display: none;
-  font-size: 28px;
+  font-size: 35px;
   cursor: pointer;
   color: #061826;
   padding: 0 20px;
@@ -58,7 +58,7 @@
   }
 
   .navbar {
-    font-size: 18px;
+    font-size: 22px;
   }
   .logo .text-4xl {
     padding: 20px;
@@ -143,7 +143,7 @@
   }
 
   .about_content_1 a {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .about_content_1 a i {
@@ -197,7 +197,6 @@
 
   .Work-page .Work_content h1 {
     font-size: 3rem;
-    text-align: center;
   }
 
   .Work_content_1 {
@@ -251,7 +250,6 @@
     font-size: 3rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
-    text-align: center;
     padding-top: 20px;
   }
   .box_2_heading p {
@@ -323,7 +321,7 @@
   
   .accordion-header {
    
-    padding: 25px;
+    padding: 25px;}
 
 .process_content {
   border-right: 0px solid #1e293b;
@@ -358,10 +356,15 @@
   border-top:1px solid #061826;
 }
 .service-page .add {
-  line-height: 0.8;
+  line-height: 0.3;
   padding-bottom: 20px;
   font-size: 3rem !important;
+  margin-top: 8px;
 }
 
+.about-icon img{
+  right: 55px;
+
 }
+
 }
