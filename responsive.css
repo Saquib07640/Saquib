@@ -316,8 +316,11 @@
     
     .process_content h1 {
       font-size: 3rem;
+      padding: 20px 0 ;
   }
-
+.process_content p{
+  padding: 20px 0;
+}
   
   .accordion-header {
    
@@ -326,7 +329,7 @@
 .process_content {
   border-right: 0px solid #1e293b;
   width: 100%;
-   padding: 0px;}
+   padding: 20px;}
 
    .process_content_toggele .accordion-item:nth-child(1) {
    border-top: 1px solid #061826;
@@ -352,9 +355,7 @@
 .name_subheading{
   border-bottom: 1px solid #061826;
 }
-.process-page .container{
-  border-top:1px solid #061826;
-}
+
 .service-page .add {
   line-height: 0.3;
   padding-bottom: 20px;
