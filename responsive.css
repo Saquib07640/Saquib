@@ -106,7 +106,8 @@
 
   .about-page .box_1 {
     border-left: none;
-    border-top: 1px solid #1e293b;
+    border-top: 0px solid #1e293b;
+    border-right: 0px solid #;
   }
 
   .about-page .about_images img {
@@ -201,6 +202,12 @@
 
   .Work_content_1 {
     flex-direction: column;
+    text-align: center;
+    
+  }
+  .Work_content_1:last-child{
+   border-bottom: 0px solid #061826;
+    
   }
 
   .Work_content_2 {
@@ -223,9 +230,7 @@
   .more_work a {
     font-size: 2rem;
   }
-  .Work_content_1 {
-    text-align: center;
-  }
+  
   .more_work a i {
     font-size: 2rem;
     margin-left: 10px;
@@ -274,7 +279,9 @@
 
   .get-touch-page .box_1 {
     border-left: none;
-    border-top: 1px solid #1e293b;
+  }
+  .get-touch-page .box_1{
+    border-right: 0px solid #061826;
   }
 
   .get-touch-page {
