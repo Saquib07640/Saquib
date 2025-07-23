@@ -1218,7 +1218,7 @@ font-size: 0.9rem;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .resume-button:hover {
