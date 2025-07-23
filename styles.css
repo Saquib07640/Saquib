@@ -1108,7 +1108,7 @@ padding: 20px;
 
 .skills_content_heading{
 border-right: 1px solid #1e293b;
-border-bottom: 1px solid #1e293b;
+border-bottom: 0px solid #1e293b;
 
 
 }
@@ -1143,10 +1143,7 @@ font-size: 0.9rem;
     color: rgb(6, 24, 38);
     border: 1px solid #1e293b;
     border-radius: 5px;
-    transform-style: preserve-3d;
-    transform-origin: center;
-    will-change: transform;
-    transition: box-shadow 0.3s ease;
+    
 }
 .bottom-content{
    padding: 20px;

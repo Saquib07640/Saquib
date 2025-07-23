@@ -197,33 +197,5 @@ textAnimation(".work-animation-2", ".webiste");
     </div>
   `).join("");
   
-setTimeout(() => {
-  document.querySelectorAll(".skills_content_heading_1 li").forEach((item) => {
-    item.addEventListener("mousemove", (e) => {
-      const rect = item.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -10;
-      const rotateY = ((x - centerX) / centerX) * 10;
 
-      gsap.to(item, {
-        duration: 0.3,
-        rotateX,
-        rotateY,
-        ease: "power2.out",
-      });
-    });
-
-    item.addEventListener("mouseleave", () => {
-      gsap.to(item, {
-        duration: 0.6,
-        rotateX: 0,
-        rotateY: 0,
-        ease: "power2.out",
-      });
-    });
-  });
-}, 0); // Ensures DOM elements exist before attaching listeners
  
