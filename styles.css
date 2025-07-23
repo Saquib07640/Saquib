@@ -161,8 +161,14 @@ a, h1, h2, h3, h4, h5, h6, p{
 .image_box_2 {
   width: 100%;
 }
+
+
+
 .image_box img {
   transform: rotate(180deg);
+}
+.image_box .image-rotate {
+  transform: rotate(90deg);
 }
 
 .child_1 {
@@ -1205,9 +1211,6 @@ font-size: 0.9rem;
     }
 
 
-    .dark-background:hover ~ .custom-cursor {
-  border-color: white;
-}
 
 .resume-button {
   display: inline-block;
