@@ -87,15 +87,34 @@ function textAnimation(className, trigger) {
   });
 }
 
-const cursor = document.createElement("div");
-cursor.classList.add("custom-cursor");
-document.body.appendChild(cursor);
 
-// Move the cursor with mouse
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
+
+const cursor = document.createElement("div");
+  cursor.classList.add("custom-cursor");
+  document.body.appendChild(cursor);
+
+let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let currentX = mouseX;
+  let currentY = mouseY;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateCursor() {
+    // Use lerp (linear interpolation) for smooth motion
+    currentX += (mouseX - currentX) * 0.1;
+    currentY += (mouseY - currentY) * 0.1;
+
+    cursor.style.left = `${currentX}px`;
+    cursor.style.top = `${currentY}px`;
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
 
 // Elements to trigger cursor scale
 const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
@@ -127,6 +146,84 @@ window.addEventListener("load", () => {
 textAnimation(".reveal-type", ".about_heading");
 textAnimation(".reveal-type_2", ".Work_heading");
 textAnimation(".revealType_3", ".add");
+textAnimation(".skills_heading", ".ani");
 textAnimation(".name-effect", "#about-container");
 textAnimation(".name-effect-1", ".process_content");
 textAnimation(".work-animation-2", ".webiste");
+
+
+  const skills = [
+    {
+      title: "Web Design",
+      description: "Craft engaging, user-friendly Websites.",
+      items: ["Landing page", "Website", "One page", "Responsive"]
+    },
+    {
+      title: "Graphic Design",
+      description: "Creates impactful visuals and branding.",
+      items: ["Creatives", "Illustrator", "Logo", "Packaging"]
+    },
+    {
+      title: "Development",
+      description: "Builds functional and scalable solution.",
+      items: ["Form database", "Website", "Add-on"]
+    },
+    {
+      title: "Video Editing",
+      description: "Crafts captivating and polished visual stories.",
+      items: ["Reels", "Youtube", "Story board"]
+    }
+  ];
+
+  const skillsContent = document.getElementById("skillsContent");
+
+  skillsContent.innerHTML = skills.map(skill => `
+    <div class="skills_content_heading">
+      <div class="skills_content_heading_1">
+        <h1>${skill.title}</h1>
+        <p>${skill.description}</p>
+        <ul>
+          ${skill.items.map(item => `<li>${item}</li>`).join("")}
+        </ul>
+      </div>
+      <div class="skills_bottom_content">
+        <div class="bottom-content">
+          <h3>Explore</h3>
+        </div>
+        <div class="bottom-icon">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+  `).join("");
+  
+setTimeout(() => {
+  document.querySelectorAll(".skills_content_heading_1 li").forEach((item) => {
+    item.addEventListener("mousemove", (e) => {
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -10;
+      const rotateY = ((x - centerX) / centerX) * 10;
+
+      gsap.to(item, {
+        duration: 0.3,
+        rotateX,
+        rotateY,
+        ease: "power2.out",
+      });
+    });
+
+    item.addEventListener("mouseleave", () => {
+      gsap.to(item, {
+        duration: 0.6,
+        rotateX: 0,
+        rotateY: 0,
+        ease: "power2.out",
+      });
+    });
+  });
+}, 0); // Ensures DOM elements exist before attaching listeners
+ 
