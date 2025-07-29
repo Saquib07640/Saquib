@@ -90,32 +90,14 @@ function textAnimation(className, trigger) {
 
 
 const cursor = document.createElement("div");
-  cursor.classList.add("custom-cursor");
-  document.body.appendChild(cursor);
+cursor.classList.add("custom-cursor");
+document.body.appendChild(cursor);
 
-let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let currentX = mouseX;
-  let currentY = mouseY;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  function animateCursor() {
-    // Use lerp (linear interpolation) for smooth motion
-    currentX += (mouseX - currentX) * 0.1;
-    currentY += (mouseY - currentY) * 0.1;
-
-    cursor.style.left = `${currentX}px`;
-    cursor.style.top = `${currentY}px`;
-
-    requestAnimationFrame(animateCursor);
-  }
-
-  animateCursor();
-
+// Move the cursor with mouse
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = `${e.clientX}px`;
+  cursor.style.top = `${e.clientY}px`;
+});
   
 
 // Elements to trigger cursor scale
