@@ -116,6 +116,8 @@ let mouseX = window.innerWidth / 2;
 
   animateCursor();
 
+  
+
 // Elements to trigger cursor scale
 const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
 
@@ -166,7 +168,7 @@ textAnimation(".work-animation-2", ".webiste");
     {
       title: "Development",
       description: "Builds functional and scalable solution.",
-      items: ["Form database", "Website", "Add-on"]
+      items: ["wordress","shopify","Form database", "Add-on"]
     },
     {
       title: "Video Editing",
