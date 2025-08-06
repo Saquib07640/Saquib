@@ -46,6 +46,21 @@
 
 /* Hide menu & button on smaller screens */
 @media (max-width: 768px) {
+
+   .custom-cursor {
+    display: none;
+  }
+
+  body {
+    cursor: default;
+  }
+ .custom-cursor,
+  .cursor-tail {
+    display: none;
+  }
+
+  
+
   .menu a {
     display: none;
   }

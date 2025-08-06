@@ -89,30 +89,130 @@ function textAnimation(className, trigger) {
 
 
 
-const cursor = document.createElement("div");
-cursor.classList.add("custom-cursor");
-document.body.appendChild(cursor);
+// const cursor = document.createElement("div");
+// cursor.classList.add("custom-cursor");
+// document.body.appendChild(cursor);
 
-// Move the cursor with mouse
-document.addEventListener("mousemove", (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
+// // Move the cursor with mouse
+// document.addEventListener("mousemove", (e) => {
+//   cursor.style.left = `${e.clientX}px`;
+//   cursor.style.top = `${e.clientY}px`;
+// });
   
 
-// Elements to trigger cursor scale
-const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
+// // Elements to trigger cursor scale
+// const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
 
-hoverTargets.forEach((el) => {
-  el.addEventListener("mouseenter", () => {
-    cursor.classList.add("hovered");
-  });
-  el.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hovered");
-  });
-});
+// hoverTargets.forEach((el) => {
+//   el.addEventListener("mouseenter", () => {
+//     cursor.classList.add("hovered");
+//   });
+//   el.addEventListener("mouseleave", () => {
+//     cursor.classList.remove("hovered");
+//   });
+// });
 
 
+//  const cursor = document.createElement("div");
+//   cursor.classList.add("custom-cursor");
+//   document.body.appendChild(cursor);
+
+//   let mouseX = 0;
+//   let mouseY = 0;
+//   let cursorX = 0;
+//   let cursorY = 0;
+
+//   document.addEventListener("mousemove", (e) => {
+//     mouseX = e.clientX;
+//     mouseY = e.clientY;
+//   });
+
+//   function animateCursor() {
+//     // Smooth follow (lerp)
+//     cursorX += (mouseX - cursorX) * 0.15;
+//     cursorY += (mouseY - cursorY) * 0.15;
+//     cursor.style.left = `${cursorX}px`;
+//     cursor.style.top = `${cursorY}px`;
+//     requestAnimationFrame(animateCursor);
+//   }
+
+//   animateCursor();
+
+//   // Hover effect on elements
+//   const hoverTargets = document.querySelectorAll("a, p, h1, h2, h3, h4, h5, h6");
+
+//   hoverTargets.forEach((el) => {
+//     el.addEventListener("mouseenter", () => cursor.classList.add("hovered"));
+//     el.addEventListener("mouseleave", () => cursor.classList.remove("hovered"));
+//   });
+
+
+const isTouchDevice = window.matchMedia("(hover: none), (max-width: 768px)").matches;
+
+  if (!isTouchDevice) {
+    // Create main cursor and tail
+    const cursor = document.createElement("div");
+    cursor.classList.add("custom-cursor");
+    document.body.appendChild(cursor);
+
+    const tail = document.createElement("div");
+    tail.classList.add("cursor-tail");
+    document.body.appendChild(tail);
+
+    let mouseX = 0, mouseY = 0;
+    let cursorX = 0, cursorY = 0;
+    let tailX = 0, tailY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animate() {
+      // Main cursor movement
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursor.style.left = cursorX + "px";
+      cursor.style.top = cursorY + "px";
+
+      // Tail follows behind
+      tailX += (mouseX - tailX) * 0.05;
+      tailY += (mouseY - tailY) * 0.05;
+      tail.style.left = tailX + "px";
+      tail.style.top = tailY + "px";
+
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Hover effect
+    const hoverTargets = document.querySelectorAll("a, button, p, h1, h2, h3, h4, h5, h6");
+    hoverTargets.forEach((el) => {
+      el.addEventListener("mouseenter", () => cursor.classList.add("hovered"));
+      el.addEventListener("mouseleave", () => cursor.classList.remove("hovered"));
+    });
+
+    // Save cursor position for page transitions
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("cursorX", mouseX);
+      localStorage.setItem("cursorY", mouseY);
+    });
+
+    const savedX = localStorage.getItem("cursorX");
+    const savedY = localStorage.getItem("cursorY");
+    if (savedX && savedY) {
+      mouseX = parseFloat(savedX);
+      mouseY = parseFloat(savedY);
+      cursorX = mouseX;
+      cursorY = mouseY;
+      tailX = mouseX;
+      tailY = mouseY;
+      cursor.style.left = `${cursorX}px`;
+      cursor.style.top = `${cursorY}px`;
+      tail.style.left = `${tailX}px`;
+      tail.style.top = `${tailY}px`;
+    }
+  }
 
 const loaderElement = document.getElementById("mini-loader-content");
 const time = 1000;
