@@ -156,6 +156,7 @@
     padding: 20px;
     justify-content: center;
     margin-top: 40px;
+    border-bottom: 1px solid #1e293b;
   }
 
   .about_content_1 a {
