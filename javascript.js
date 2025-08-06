@@ -111,6 +111,9 @@ hoverTargets.forEach((el) => {
     cursor.classList.remove("hovered");
   });
 });
+
+
+
 const loaderElement = document.getElementById("mini-loader-content");
 const time = 1000;
 let isLoading = true;
