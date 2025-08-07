@@ -302,3 +302,23 @@ textAnimation(".work-animation-2", ".webiste");
         scrollBtn.classList.remove('hide');
       }
     });
+
+
+    window.addEventListener("scroll", () => {
+  const btn = document.getElementById("scrollTopBtn");
+  if (window.scrollY > 100) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+});
+
+// Initially hide button
+document.getElementById("scrollTopBtn").style.display = "none";
+
+ document.getElementById("scrollTopBtn").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });

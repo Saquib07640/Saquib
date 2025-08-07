@@ -1313,3 +1313,23 @@ font-size: 0.9rem;
   color: #f7fff7;
   
 }
+
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+#scrollTopBtn:hover {
+  opacity: 1;
+}
