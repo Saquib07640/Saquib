@@ -286,3 +286,19 @@ textAnimation(".work-animation-2", ".webiste");
   
 
  
+  function scrollToNextSection() {
+      const nextSection = document.getElementById('next-section');
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Hide scroll button after scroll
+    window.addEventListener('scroll', () => {
+      const scrollBtn = document.getElementById('scroll-indicator');
+      if (window.scrollY > 50) {
+        scrollBtn.classList.add('hide');
+      } else {
+        scrollBtn.classList.remove('hide');
+      }
+    });
