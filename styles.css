@@ -906,10 +906,10 @@ padding: 20px;
   border-right: 1px solid #1e293b;
 }
 
-.process_content {
+.process_content{
   border-right: 1px solid #1e293b;
   width: 100%;
-  padding: 30px;
+  padding: 20px 20px 150px 20px;
   height: 100%;
 }
 .process_content h1 {
@@ -917,14 +917,13 @@ padding: 20px;
   font-weight: 700;
   color: rgb(6, 24, 38);
   text-align: left;
-  padding: 40px;
 }
 .process_content p {
   font-size: 1rem;
   font-weight: 400;
   color: rgb(6, 24, 38);
   text-align: left;
-  padding: 0 20px 20px 50px;
+  padding: 10px 0px 0px 0px;
 }
 .process_content_toggele{
   height: 100%;
@@ -932,6 +931,7 @@ padding: 20px;
 .process-page .accordion-item:nth-child(3) {
   border-bottom: 1px solid #1e293b;
 }
+
 .over-hidden{
   overflow: hidden;
 }
