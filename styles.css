@@ -931,6 +931,22 @@ padding: 20px;
 .process-page .accordion-item:nth-child(3) {
   border-bottom: 1px solid #1e293b;
 }
+.accordion .accordion-content h4{
+  font-size: 0.9rem;
+  font-weight: 400;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.accordion .accordion-content h4:hover {
+    background-color:#1e293b;
+    color: #ffffff;
+    transform: scale(1.08);
+  transition: all 0.3s ease;
+    }
+
+
+
 
 .over-hidden{
   overflow: hidden;
