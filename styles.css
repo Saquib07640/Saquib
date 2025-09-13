@@ -163,7 +163,7 @@ button {
 }
 .name-page .grid {
   display: grid;
-  grid-template-columns: 0.3fr 2.5fr 0.3fr;
+  grid-template-columns: 0.3fr 3fr 0.3fr;
   transition: all 0.3s ease-in-out;
   height: 100%;
   width: 100%;
@@ -1350,4 +1350,42 @@ font-size: 0.9rem;
 
 #scrollTopBtn:hover {
   opacity: 1;
+}
+
+
+
+
+.work-menu-section {
+  border-bottom: 1px solid #1e293b;
+  border-left: 1px solid #1e293b;
+  border-right: 1px solid #1e293b;
+} 
+.work-menu-section .container {
+  display: flex;
+  border-left: 1px solid #1e293b;
+  border-right: 1px solid #1e293b;
+} 
+
+.work-menu ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.work-menu ul li {
+  padding: 20px 25px;
+  border-right: 1px solid #1e293b;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+.work-menu ul li:first-child {
+  border-left: 1px solid #1e293b;
+  
+}
+.work-menu ul li:hover,
+.work-menu ul li.active {
+  background-color: #1e293b;
+  color: #fff;
 }

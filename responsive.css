@@ -86,7 +86,7 @@
   }
 
   .child_image_box-top {
-    height: 25px !important;
+    height: 50px !important;
   }
 
   .box_2_heading a {
@@ -95,7 +95,7 @@
   }
 
   .child_image_box-top h3 {
-    font-size: 0.55rem;
+    font-size: 0.9rem;
   }
 
   .profession .child_image_box-top img {
@@ -270,7 +270,7 @@
   }
 
   .box_2_heading h1 {
-    font-size: 2.4rem !important;
+    font-size: 2.8rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
     padding:0;
