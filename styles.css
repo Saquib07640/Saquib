@@ -1226,9 +1226,11 @@ border-right: 0px solid #1e293b;
 .skills_content_heading_1{
   padding:30px 20px;
 }
-.skills_content_heading_1 h1{
+.skills_content_heading_1 h2{
   margin-top: 10px;
 color: rgb(6, 24, 38);
+font-size: 1.7rem;
+font-weight: 700;
 }
 .skills_content_heading_1 p{
 margin-top: 20px;

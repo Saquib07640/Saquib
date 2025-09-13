@@ -267,7 +267,7 @@ textAnimation(".work-animation-2", ".webiste");
   skillsContent.innerHTML = skills.map(skill => `
     <div class="skills_content_heading">
       <div class="skills_content_heading_1">
-        <h1>${skill.title}</h1>
+        <h2>${skill.title}</h2>
         <p>${skill.description}</p>
         <ul>
           ${skill.items.map(item => `<li>${item}</li>`).join("")}
