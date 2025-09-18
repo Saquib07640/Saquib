@@ -1,3 +1,5 @@
+
+
 const accordionItems = document.querySelectorAll(".accordion-item");
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
@@ -313,15 +315,22 @@ textAnimation(".work-animation-2", ".webiste");
   }
 });
 
-// Initially hide button
-document.getElementById("scrollTopBtn").style.display = "none";
+const filterButtons = document.querySelectorAll(".filter-btn");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
- document.getElementById("scrollTopBtn").addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+  filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filterValue = button.dataset.filter;
+
+      galleryItems.forEach(item => {
+        if (filterValue === "all" || item.classList.contains(filterValue)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      });
     });
   });
-
-
-  
