@@ -90,65 +90,6 @@ function textAnimation(className, trigger) {
 }
 
 
-
-// const cursor = document.createElement("div");
-// cursor.classList.add("custom-cursor");
-// document.body.appendChild(cursor);
-
-// // Move the cursor with mouse
-// document.addEventListener("mousemove", (e) => {
-//   cursor.style.left = `${e.clientX}px`;
-//   cursor.style.top = `${e.clientY}px`;
-// });
-  
-
-// // Elements to trigger cursor scale
-// const hoverTargets = document.querySelectorAll("h1, h2, h3, h4, h5, h6, a, p");
-
-// hoverTargets.forEach((el) => {
-//   el.addEventListener("mouseenter", () => {
-//     cursor.classList.add("hovered");
-//   });
-//   el.addEventListener("mouseleave", () => {
-//     cursor.classList.remove("hovered");
-//   });
-// });
-
-
-//  const cursor = document.createElement("div");
-//   cursor.classList.add("custom-cursor");
-//   document.body.appendChild(cursor);
-
-//   let mouseX = 0;
-//   let mouseY = 0;
-//   let cursorX = 0;
-//   let cursorY = 0;
-
-//   document.addEventListener("mousemove", (e) => {
-//     mouseX = e.clientX;
-//     mouseY = e.clientY;
-//   });
-
-//   function animateCursor() {
-//     // Smooth follow (lerp)
-//     cursorX += (mouseX - cursorX) * 0.15;
-//     cursorY += (mouseY - cursorY) * 0.15;
-//     cursor.style.left = `${cursorX}px`;
-//     cursor.style.top = `${cursorY}px`;
-//     requestAnimationFrame(animateCursor);
-//   }
-
-//   animateCursor();
-
-//   // Hover effect on elements
-//   const hoverTargets = document.querySelectorAll("a, p, h1, h2, h3, h4, h5, h6");
-
-//   hoverTargets.forEach((el) => {
-//     el.addEventListener("mouseenter", () => cursor.classList.add("hovered"));
-//     el.addEventListener("mouseleave", () => cursor.classList.remove("hovered"));
-//   });
-
-
 const isTouchDevice = window.matchMedia("(hover: none), (max-width: 768px)").matches;
 
   if (!isTouchDevice) {
