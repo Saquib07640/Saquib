@@ -547,7 +547,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  const filterBtns = document.querySelectorAll(".filter-btn");
+  const filterBtns = document.querySelectorAll(".filter-items-btn");
   const galleryItems = document.querySelectorAll(".gallery-item");
 
   filterBtns.forEach(btn => {
