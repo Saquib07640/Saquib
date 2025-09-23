@@ -567,3 +567,136 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  const closeBtn = document.querySelector('.close');
+
+  let currentIndex = 0;
+  let scale = 1;
+  let translateX = 0, translateY = 0;
+  let baseW = 0, baseH = 0;
+  let isPanning = false;
+  let panStartX = 0, panStartY = 0;
+  let startTranslateX = 0, startTranslateY = 0;
+
+  // Open image
+  galleryImages.forEach((img, i) => {
+    img.addEventListener('click', () => {
+      currentIndex = i;
+      openLightbox(img.src);
+    });
+  });
+
+  function openLightbox(src) {
+    lightbox.style.display = 'block';
+    lightboxImg.style.transition = 'transform 0.3s ease';
+    lightboxImg.src = src;
+    lightboxImg.onload = () => {
+      baseW = lightboxImg.clientWidth;
+      baseH = lightboxImg.clientHeight;
+      resetTransform();
+    };
+  }
+
+  function resetTransform() {
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    updateTransform();
+  }
+
+  function updateTransform() {
+    lightboxImg.style.transform = `translate(calc(-50% + ${translateX}px), calc(-50% + ${translateY}px)) scale(${scale})`;
+  }
+
+  function clampTranslate() {
+    const containerW = lightbox.clientWidth;
+    const containerH = lightbox.clientHeight;
+    const scaledW = baseW * scale;
+    const scaledH = baseH * scale;
+    const maxX = Math.max(0, (scaledW - containerW) / 2);
+    const maxY = Math.max(0, (scaledH - containerH) / 2);
+
+    translateX = Math.min(maxX, Math.max(-maxX, translateX));
+    translateY = Math.min(maxY, Math.max(-maxY, translateY));
+  }
+
+  // Zoom on double click
+  lightboxImg.addEventListener('dblclick', (e) => {
+    if (scale === 1) {
+      const rect = lightboxImg.getBoundingClientRect();
+      const clickOffsetX = e.clientX - rect.left - rect.width / 2;
+      const clickOffsetY = e.clientY - rect.top - rect.height / 2;
+
+      scale = 2;
+      translateX = -Math.round(clickOffsetX * (scale - 1));
+      translateY = -Math.round(clickOffsetY * (scale - 1));
+      clampTranslate();
+    } else {
+      resetTransform();
+    }
+    updateTransform();
+  });
+
+  // Drag / pan
+  lightboxImg.addEventListener('pointerdown', (e) => {
+    if (scale <= 1) return;
+    isPanning = true;
+    panStartX = e.clientX;
+    panStartY = e.clientY;
+    startTranslateX = translateX;
+    startTranslateY = translateY;
+    lightboxImg.setPointerCapture(e.pointerId);
+    lightboxImg.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  window.addEventListener('pointermove', (e) => {
+    if (!isPanning) return;
+    const dx = e.clientX - panStartX;
+    const dy = e.clientY - panStartY;
+    translateX = startTranslateX + dx;
+    translateY = startTranslateY + dy;
+    clampTranslate();
+    updateTransform();
+  });
+
+  window.addEventListener('pointerup', (e) => {
+    if (!isPanning) return;
+    isPanning = false;
+    try { lightboxImg.releasePointerCapture(e.pointerId); } catch {}
+    lightboxImg.style.transition = 'transform 0.3s ease';
+  });
+
+  // Slider
+  function changeSlide(step) {
+    currentIndex += step;
+    if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+    if (currentIndex >= galleryImages.length) currentIndex = 0;
+    openLightbox(galleryImages[currentIndex].src);
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => changeSlide(-1));
+  if (nextBtn) nextBtn.addEventListener('click', () => changeSlide(1));
+
+  // Close
+  function closeLightbox(event) {
+    if (event.target === lightbox || event.target.classList.contains('close')) {
+      lightbox.style.display = 'none';
+    }
+  }
+  lightbox.addEventListener('click', closeLightbox);
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display !== 'block') return;
+    if (e.key === 'ArrowLeft') changeSlide(-1);
+    if (e.key === 'ArrowRight') changeSlide(1);
+    if (e.key === 'Escape') lightbox.style.display = 'none';
+  });
+});
