@@ -554,7 +554,7 @@ button {
 }
 .Work_content_1 img {
   background-size: cover;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
 }
@@ -562,7 +562,7 @@ button {
 .Work_content_2 {
   position: relative;
   overflow: hidden;
-  height: 450px;
+  height: 400px;
 }
 .hover_content {
   position: absolute;
