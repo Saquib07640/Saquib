@@ -44,6 +44,160 @@
   font-weight: 300;
 }
 
+
+/* ==============================
+   📱 Tablet View (768px–1024px)
+   ============================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Show elements hidden on mobile */
+  .custom-cursor,
+  .cursor-tail {
+    display: block;
+  }
+
+  .menu a {
+    display: inline-block;
+  }
+
+  .child button {
+    display: inline-block;
+  }
+
+  .burger {
+    display: none; /* Hide burger menu */
+  }
+
+  /* Navbar + Logo adjustments */
+  .navbar {
+    height: 100px;
+    font-size: 28px;
+  }
+  .navbar .grid {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.7fr;}
+
+  .logo .text-4xl {
+    padding: 30px;
+  }
+
+  /* About section grid */
+  .about-page .grid {
+    grid-template-columns: 1fr 1fr; /* Split in two */
+  }
+
+  .about-page .about_content h1 {
+    font-size: 3.5rem;
+  }
+
+  .about-page .about_content h2 {
+    font-size: 2rem;
+  }
+
+  .about-page .about_content p {
+    font-size: 1.1rem;
+  }
+
+  /* Work Page */
+  .Work-page .grid {
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+  }
+
+  .Work_content_2 {
+    height: 350px;
+  }
+
+  .hover_content,
+  .hover_content_1 {
+    font-size: 0.8rem;
+    padding: 20px;
+  }
+
+  .more_work a {
+    font-size: 2.5rem;
+  }
+
+  /* Service Page */
+  .service-page .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .box_2_heading h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 8rem) !important;
+  }
+
+  .child_image_box-top h3 {
+    font-size: 22px;}
+  .box_2_heading p {
+    font-size: 1.2rem;
+  }
+
+  /* Process Page */
+  .process-page .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .process_content h1 {
+    font-size: 3.2rem;
+  }
+
+  .process_content p {
+    font-size: 1rem;
+  }
+
+  /* Skills Section */
+  .skills_content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills_heading h1 {
+    font-size: 3.2rem;
+  }
+
+  .skills_content_heading h1 {
+    font-size: 2rem;
+  }
+
+  .skills_content_heading_1 ul {
+    font-size: 1.1rem;
+  }
+
+  /* Contact / Get in touch */
+  .get-touch-page .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .child_image_box-top_1 a {
+    font-size: 2rem;
+  }
+
+  .child_image_box-top_1 a i {
+    font-size: 2.5rem;
+  }
+
+  /* Name Section */
+  .name-page_1 .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .name_heading h1 {
+    font-size: 3rem;
+  }
+
+  .name_subheading h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Items Section */
+  .items-slide h1 {
+    font-size: 2rem;
+  }
+
+  /* Padding adjustments */
+  .padding_1 {
+    padding: 30px;
+  }
+}
 /* Hide menu & button on smaller screens */
 @media (max-width: 768px) {
 
@@ -96,6 +250,7 @@
 
   .child_image_box-top h3 {
     font-size: 0.9rem;
+    margin-top: 10px;
   }
 
   .profession .child_image_box-top img {

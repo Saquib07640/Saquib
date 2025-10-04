@@ -1416,7 +1416,7 @@ font-size: 0.9rem;
   .gallery-grid {
       width: min(1200px, 100%);
       margin: 0 auto;
-      columns: 3 300px;   /* 3 columns, each at least 300px wide */
+      columns: 4 280px;   /* 3 columns, each at least 300px wide */
       column-gap: 1em;    /* space between columns */
   }
   .gallery-grid .gallery-item img{
