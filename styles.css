@@ -15,31 +15,6 @@ body {
 li {
   cursor: none;
 }
-/* .custom-cursor {
-  position: fixed;
-  width: 30px;
-  height: 30px;
-  border: 3.2px solid rgb(6, 24, 38);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-   background: white;
-  mix-blend-mode: difference;
-  transition: transform 0.08s ease;
-
-
-}
-
-
-.custom-cursor.hovered {
-  transform:scale(2);
-  transition: 0.01s;
-
-}
-a, h1, h2, h3, h4, h5, h6, p{
-  cursor: none;
-} */
-
 a{
   cursor: none;
 }
@@ -131,7 +106,6 @@ button {
 }
 
 .child button {
-  font-size: 16px;
   padding: 5px 10px;
   background-color: transparent;
   border: 1px solid #1e293b;
@@ -242,11 +216,13 @@ button {
 }
 
 .box_2_heading h1 {
+   font-size: clamp(2.5rem, 8vw, 8.5rem);
   text-decoration: none;
   color: rgb(6, 24, 38);
-  font-size: 8.5rem !important;
   font-weight: 700;
 }
+
+    
 
 .add h1{
   font-size: 5rem !important;
@@ -345,6 +321,8 @@ button {
   z-index: 5;
 }
 
+#scroll-indicator P {
+  margin-bottom: 0px;}
 #scroll-indicator {
 
   position: fixed;
@@ -658,7 +636,6 @@ service-page .box_2_heading {
   height: 100%;
 }
 .box_2_heading h1 {
-  font-size: 5.5rem;
   font-weight: 700;
   padding: 20px;
   color: rgb(6, 24, 38);

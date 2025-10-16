@@ -483,7 +483,7 @@ textAnimation(".work-animation-2", ".webiste");
     {
       title: "Video Editing",
       description: "Crafts captivating and polished visual stories.",
-      items: ["Reels", "Youtube", "Story board"]
+      items: ["Reels", "Youtube", "Story board","Short film"]
     }
   ];
 
