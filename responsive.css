@@ -139,9 +139,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .box_2_heading h1 {
-    font-size: 4rem !important;
-  }
 
   .child_image_box-top h3 {
     font-size: 22px;}
@@ -442,7 +439,6 @@
   }
 
   .box_2_heading h1 {
-    font-size: 2.8rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
     padding:0;
