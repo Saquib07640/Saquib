@@ -216,7 +216,7 @@ button {
 }
 
 .box_2_heading h1 {
-   font-size: clamp(2.5rem, 8vw, 8.5rem);
+   font-size: clamp(2.5rem, 5vw + 1rem, 8.5rem);
   text-decoration: none;
   color: rgb(6, 24, 38);
   font-weight: 700;
