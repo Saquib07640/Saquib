@@ -439,6 +439,7 @@
   }
 
   .box_2_heading h1 {
+    font-size:2.4rem !important;
     font-weight: 600;
     color: rgb(6, 24, 38);
     padding:0;
